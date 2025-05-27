@@ -7,6 +7,7 @@ describe('My Login application', () => {
         await LoginPage.open()
 
         await LoginPage.login('tomsmith', 'SuperSecretPassword!')
+        await browser.pause(5000)
         await expect(SecurePage.flashAlert).toBeExisting()
         await expect(SecurePage.flashAlert).toHaveText(
         expect.stringContaining('You logged into a secure area!'))
